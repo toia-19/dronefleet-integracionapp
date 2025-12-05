@@ -2,6 +2,7 @@
 
 Proyecto final de **Integración de Aplicaciones**, Desarrollo de Software Full Stack II
 
+Gestión de flota de drones para entrega de paquetes en zonas urbanas
 ---
 
 ## Tecnologías Utilizadas
