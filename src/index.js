@@ -5,12 +5,10 @@ require('reflect-metadata');
 const express = require('express');
 // Servidor HTTP
 const { createServer } = require('http');
-// WebSockets
-const { Server } = require('socket.io');
+
 // GraphQl
 const { ApolloServer } = require('apollo-server-express');
-// RabbitMQ
-const amqp = require('amqplib');
+
 // Conexión a Base de Datos
 const AppDataSource = require('../src/database/connection');
 
@@ -29,46 +27,11 @@ app.use('/flights', express.json(), flightRoutes);
 async function startGraphQL() {
     const server = new ApolloServer({ typeDefs, resolvers });
     await server.start();
+
+    /* Apollo */
     server.applyMiddleware({ app, path: '/graphql' });
 }
 startGraphQL();
-
-/* WebSocket */
-/* const io = new Server(httpServer, { cors: { origin: "*" } });
-
-io.on("connection", (socket) => {
-    console.log("Cliente conectado vía WebSocket");
-
-    // Ejemplo: enviar posición en vivo
-    socket.emit("position", { droneId: 1, lat: -38.95, lng: -67.99 });
-
-    // Ejemplo: chat simple
-    socket.on("chat", (msg) => {
-        console.log("Mensaje recibido:", msg);
-        io.emit("chat", msg); // reenvía a todos los clientes
-    });
-}); */
-
-/* Event-Driven */
-/* async function connectBroker() {
-    try {
-        const conn = await amqp.connect(process.env.RABBITMQ_URL || 'amqp://localhost');
-        const ch = await conn.createChannel();
-        await ch.assertQueue('alerts');
-
-        // Publicar ejemplo de alerta
-        ch.sendToQueue('alerts', Buffer.from('Batería baja en dron #1'));
-
-        // Consumir mensajes
-        ch.consume('alerts', (msg) => {
-            console.log("Alerta recibida:", msg.content.toString());
-            ch.ack(msg);
-        });
-    } catch (err) {
-        console.error("Error conectando a RabbitMQ:", err);
-    }
-}
-connectBroker(); */
 
 /* Base de Datos */
 AppDataSource.initialize()
