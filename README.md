@@ -8,8 +8,6 @@ Proyecto final de **Integración de Aplicaciones**, Desarrollo de Software Full 
 - **Node.js** (entorno de ejecución)
 - **Express** (API REST)
 - **Apollo Server (GraphQL)** (consultas complejas)
-- **Socket.io** (comunicación en tiempo real (WebSockets))
-- **RabbitMQ (amqplib)** (arquitectura basada en eventos)
 - **TypeORM + MySQL (Laragon)** (persistencia de datos)
 - **dotenv** (gestión de variables de entorno)
 - **nodemon** (recarga automática en desarrollo)
