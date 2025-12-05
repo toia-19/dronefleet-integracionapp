@@ -111,4 +111,4 @@ GET: http://localhost:3000/flights/1
 
 ---
 ## Diagrama ASCII
-![MER](/src/assets/ascii.png)
+![MER](/src/assets/diagrama-ascii.png)
