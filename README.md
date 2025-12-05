@@ -43,7 +43,7 @@ RABBITMQ_URL=amqp://localhost
 ---
 
 ## Endpoints principales
-1. **Creación de una nueva reserva**
+1. **Creación de una nueva reserva**<br>
 **Op1 - GraphQl:**
 ```bash
 POST: http://localhost:3000/graphql
@@ -68,7 +68,7 @@ BODY (JSON):
 }
 ```
 
-2. **Obtener todos los vuelos en estado "pendiente"**
+2. **Obtener todos los vuelos en estado "pendiente"**<br>
 **Op1 - GraphQl:**
 ```bash
 POST: http://localhost:3000/graphql
@@ -88,7 +88,7 @@ query {
 GET: http://localhost:3000/flights/reserves
 ```
 
-3. **Obtener reserva por ID**
+3. **Obtener reserva por ID**<br>
 **Op1 - GraphQl:**
 ```bash
 POST: http://localhost:3000/graphql
@@ -108,3 +108,6 @@ query {
 ```bash
 GET: http://localhost:3000/flights/1
 ```
+
+## Diagrama ASCII
+![MER](/src/assets/ascii.png)
